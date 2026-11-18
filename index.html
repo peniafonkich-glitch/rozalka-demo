@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cukiernia Rozalka | torty, ciasta, ciastka w Łodzi</title>
+<meta name="description" content="Makieta strony Cukierni Rozalka z Łodzi: torty, ciasta i ciastka na każdą okazję. Zamówienia: 505 707 413. Zakład Familijna 22 i trzy punkty w Łodzi-Górnej.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* Rozalka: kolor dżemu malinowego i róży z ich logo, maku (granat-czerń) i lukru (biel).
+   Szkielet: hero z makowcem 3D, "Ile ciasta?" jako blacha dzielona na ćwiartki,
+   punkty odbioru jako linia tramwajowa z przystankami, oferta świąteczna, kontakt. */
+:root{
+  --jam:#b3154a;
+  --jam2:#8c0c38;
+  --rose:#ff9fb8;
+  --poppy:#1d1622;
+  --icing:#ffffff;
+  --butter:#ffe08a;
+  --gut:clamp(18px,5vw,64px);
+  --hd:'Young Serif',Georgia,serif;
+  --bd:'Figtree','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--jam)}
+body{font-family:var(--bd);font-size:17px;line-height:1.55;color:var(--icing);background:var(--jam);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+:focus-visible{outline:3px solid var(--butter);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--hd);font-weight:400;line-height:1;letter-spacing:-.01em}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;grid-template-rows:auto 1fr;overflow:hidden;isolation:isolate}
+.seeds{position:absolute;inset:-40px;z-index:-1;opacity:.35;
+  background-image:radial-gradient(ellipse 2.2px 1.5px at center,var(--poppy) 98%,transparent),radial-gradient(ellipse 1.6px 1.1px at center,var(--poppy) 98%,transparent);
+  background-size:38px 34px,27px 31px;background-position:0 0,13px 17px;animation:drift 40s linear infinite}
+@keyframes drift{to{transform:translate(38px,68px)}}
+.glow{position:absolute;right:-10vw;top:10vh;width:70vw;height:70vw;max-width:900px;max-height:900px;border-radius:50%;background:radial-gradient(circle,rgba(255,159,184,.55),rgba(255,159,184,0) 65%);z-index:-1;animation:breathe 8s ease-in-out infinite alternate}
+@keyframes breathe{to{transform:scale(1.12)}}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px var(--gut)}
+.logo{text-decoration:none;font:400 26px var(--hd)}
+.logo small{display:block;font:800 10px var(--bd);letter-spacing:.32em;text-transform:uppercase;opacity:.8;margin-bottom:-2px}
+.nav ul{list-style:none;display:flex;gap:clamp(14px,2.6vw,32px);font-weight:600;font-size:15px}
+.nav ul a{text-decoration:none}.nav ul a:hover{text-decoration:underline}
+@media(max-width:760px){.nav ul{display:none}}
+.call{padding:10px 16px;border-radius:999px;background:var(--icing);color:var(--jam);font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:20px;padding:0 var(--gut) 40px}
+.kick{font-weight:800;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--butter)}
+.cycle{position:relative;height:clamp(84px,13vw,190px);margin-top:10px}
+.cycle h1,.cycle span{position:absolute;left:0;font:400 clamp(80px,12.5vw,184px)/1 var(--hd);opacity:0;animation:show 9s infinite}
+.cycle span:nth-child(2){animation-delay:3s}.cycle span:nth-child(3){animation-delay:6s}
+@keyframes show{0%{opacity:0;transform:translateY(24px) rotate(-2deg)}6%,30%{opacity:1;transform:none}36%,100%{opacity:0;transform:translateY(-20px)}}
+.lede{font-size:clamp(18px,1.7vw,22px);max-width:30ch;margin-top:12px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.14);font-weight:600;font-size:14px}
+.badge b{color:var(--butter)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border-radius:999px;border:2px solid var(--icing);font-weight:800;text-decoration:none}
+.btn.f{background:var(--butter);border-color:var(--butter);color:var(--poppy)}
+.btn:hover{background:var(--icing);color:var(--jam)}
+.model{position:relative;aspect-ratio:1/1;width:100%;max-width:620px;justify-self:center}
+.model::before{content:"";position:absolute;left:12%;right:12%;bottom:12%;height:12%;border-radius:50%;background:rgba(60,0,20,.35);filter:blur(16px)}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.model figcaption{position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:12px;opacity:.75}
+@media(max-width:640px){
+  .hero{min-height:0}
+  .stage{grid-template-columns:1fr;text-align:left;padding-bottom:28px;gap:4px}
+  .model{max-width:64vw;margin-top:-10px;order:-1}
+  .model figcaption{bottom:-4px}
+}
+
+/* sekcje */
+.sec{padding:clamp(70px,11vh,130px) var(--gut)}
+.wrap{max-width:1180px;margin:0 auto}
+.sec h2{font-size:clamp(44px,6.6vw,96px)}
+.sec .intro{max-width:52ch;margin-top:16px;font-size:18px}
+
+/* blacha */
+.pan{background:var(--icing);color:var(--poppy)}
+.pan .kick{color:var(--jam)}
+.pan .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,90px);align-items:center}
+@media(max-width:860px){.pan .wrap{grid-template-columns:1fr}}
+.tray{position:relative;aspect-ratio:4/3;border-radius:18px;background:#3a2d3f;padding:14px;box-shadow:inset 0 0 0 4px #554659,0 26px 50px rgba(29,22,34,.25)}
+.grid4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;height:100%}
+.grid4 i{border-radius:8px;background:repeating-linear-gradient(0deg,#f6d27a 0 18%,#fff6e8 18% 40%,#c98d4a 40% 52%,#fff6e8 52% 70%,#f2c0cc 70% 100%);opacity:.22;transform:scale(.96);transition:opacity .45s,transform .45s}
+.grid4 i.on{opacity:1;transform:none}
+.picker{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.picker button{font:800 16px var(--bd);min-height:50px;padding:0 20px;border-radius:999px;border:2px solid var(--poppy);background:none;color:var(--poppy);cursor:pointer}
+.picker button[aria-pressed=true]{background:var(--jam);border-color:var(--jam);color:var(--icing)}
+.weight{margin-top:22px;font:400 clamp(34px,4.6vw,60px) var(--hd);color:var(--jam)}
+.note{margin-top:8px;font-size:14px;color:#5a4a5e}
+.ways{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:56px}
+@media(max-width:860px){.ways{grid-template-columns:1fr}}
+.ways li{border:2px solid var(--poppy);border-radius:18px;padding:22px}
+.ways b{display:block;font:400 26px var(--hd);color:var(--jam)}
+.ways p{margin-top:8px;font-size:16px}
+.ways a{font-weight:800}
+.confirm{margin-top:18px;padding:18px 22px;border-radius:14px;background:#fde7ee;color:var(--jam2);font-weight:600}
+
+/* przystanki */
+.stops{background:var(--poppy)}
+.stops .kick{color:var(--rose)}
+.line{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:54px}
+.line::before{content:"";position:absolute;left:12.5%;right:12.5%;top:21px;height:8px;border-radius:8px;background:var(--jam)}
+.line::after{content:"";position:absolute;left:12.5%;top:21px;height:8px;width:20px;border-radius:8px;background:var(--butter);animation:tram 7s ease-in-out infinite}
+@keyframes tram{0%{left:12.5%}45%,55%{left:calc(87.5% - 20px)}100%{left:12.5%}}
+.stop{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;background:none;border:0;color:var(--icing);font:inherit;cursor:pointer;padding:0 6px}
+.stop i{width:50px;height:50px;border-radius:50%;background:var(--poppy);border:6px solid var(--icing);transition:transform .3s,background .3s}
+.stop[aria-pressed=true] i{background:var(--butter);transform:scale(1.15)}
+.stop span{display:flex;flex-direction:column;gap:4px}
+.stop b{font:400 clamp(17px,1.8vw,22px) var(--hd)}
+.stop small{font-size:13px;opacity:.7}
+@media(max-width:700px){
+  .line{grid-template-columns:1fr;gap:18px;margin-top:36px}
+  .line::before{left:21px;right:auto;top:25px;bottom:25px;width:8px;height:auto}
+  .line::after{display:none}
+  .stop{flex-direction:row;text-align:left;align-items:center}
+  .stop span{display:flex;flex-direction:column}
+}
+.stopmap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:24px;margin-top:44px;align-items:stretch}
+@media(max-width:860px){.stopmap{grid-template-columns:1fr}}
+.stopinfo{border:2px solid rgba(255,255,255,.25);border-radius:18px;padding:24px}
+.stopinfo h3{font-size:30px}
+.stopinfo p{margin-top:10px;opacity:.85}
+.mapbox{border-radius:18px;overflow:hidden;min-height:340px;border:2px solid rgba(255,255,255,.25)}
+.mapbox iframe{display:block;width:100%;height:100%;min-height:340px;border:0}
+
+/* święta */
+.xmas{background:var(--jam2)}
+.xmas .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(30px,6vw,80px)}
+@media(max-width:860px){.xmas .wrap{grid-template-columns:1fr}}
+.dates{list-style:none;margin-top:26px}
+.dates li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.25);font-size:18px}
+.dates li b{font:400 24px var(--hd);color:var(--butter)}
+.card{background:var(--icing);color:var(--poppy);border-radius:22px;padding:28px;align-self:start;transform:rotate(1.5deg)}
+.card .kick{color:var(--jam)}
+.card h3{font-size:clamp(30px,3.4vw,44px);margin-top:8px}
+.price{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px dashed #c9b6c3;font-size:18px}
+.price b{font:400 28px var(--hd);color:var(--jam)}
+.card small{display:block;margin-top:12px;font-size:13px;color:#6b5a6e}
+
+/* kontakt */
+.contact{background:var(--icing);color:var(--poppy)}
+.contact .kick{color:var(--jam)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,80px);align-items:end}
+@media(max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+.big{font:400 clamp(44px,7vw,104px) var(--hd);color:var(--jam);text-decoration:none;display:block;margin-top:14px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px}
+dt{font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding-top:4px;color:var(--jam)}
+dd{font-size:18px}
+.score{font:400 clamp(64px,9vw,130px) var(--hd);color:var(--jam);line-height:.9}
+footer{background:var(--poppy);color:rgba(255,255,255,.75);padding:32px var(--gut) 48px}
+footer p{max-width:88ch;font-size:13px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.seeds,.glow,.cycle h1,.cycle span,.line::after{animation:none}.cycle h1{opacity:1}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="start">
+  <div class="seeds" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+  <nav class="nav" aria-label="Menu">
+    <a class="logo" href="#start"><small>Cukiernia</small>Rozalka</a>
+    <ul><li><a href="#zamow">Jak zamówić</a></li><li><a href="#punkty">Punkty</a></li><li><a href="#swieta">Święta</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
+    <a class="call" href="tel:+48505707413">505 707 413</a>
+  </nav>
+  <div class="stage">
+    <div>
+      <div class="kick">Cukiernia w Łodzi</div>
+      <div class="cycle"><h1>Torty</h1><span aria-hidden="true">Ciasta</span><span aria-hidden="true">Ciastka</span></div>
+      <p class="lede">Słodkie wypieki na każdą okazję. Zakład na Familijnej i trzy punkty w Łodzi-Górnej.</p>
+      <div class="badges"><span class="badge"><b>98%</b> poleca · 209 opinii</span><span class="badge">gotówka i karta</span></div>
+      <div class="ctas"><a class="btn f" href="#zamow">Jak zamówić</a><a class="btn" href="#punkty">Punkty odbioru</a></div>
+    </div>
+    <figure class="model">
+      <canvas id="cv" role="img" aria-label="Trójwymiarowy kawałek makowca z lukrem, model wygenerowany komputerowo."></canvas>
+      <figcaption>Makowiec: model 3D wygenerowany komputerowo.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+<section class="sec pan" id="zamow">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Ile ciasta?</div>
+      <h2>Liczymy na blachy</h2>
+      <p class="intro">Najmniejsze zamówienie ciasta to 1/4 blachy, czyli około 1 kg. Wybierz, ile potrzebujesz:</p>
+      <div class="picker" role="group" aria-label="Ilość ciasta">
+        <button type="button" data-q="1" aria-pressed="true">1/4</button>
+        <button type="button" data-q="2" aria-pressed="false">1/2</button>
+        <button type="button" data-q="3" aria-pressed="false">3/4</button>
+        <button type="button" data-q="4" aria-pressed="false">cała blacha</button>
+      </div>
+      <div class="weight" id="weight" aria-live="polite">około 1 kg</div>
+      <p class="note">Wagę liczymy orientacyjnie: 1/4 blachy to około 1 kg.</p>
+    </div>
+    <div class="tray rv" aria-hidden="true"><div class="grid4" id="grid4"><i class="on"></i><i></i><i></i><i></i></div></div>
+  </div>
+  <div class="wrap">
+    <ol class="ways rv">
+      <li><b>Wiadomość</b><p>Messenger albo Instagram. Podaj numer telefonu do kontaktu.</p></li>
+      <li><b>Telefon lub SMS</b><p><a href="tel:+48505707413">505 707 413</a>, telefon odbieramy 6:00–18:00.</p></li>
+      <li><b>Osobiście</b><p>W zakładzie na Familijnej albo w każdym z naszych punktów.</p></li>
+    </ol>
+    <p class="confirm rv">Każde zamówienie potwierdzamy: ustnie albo w odpowiedzi na wiadomość. Samo wysłanie wiadomości nie oznacza przyjęcia zamówienia.</p>
+  </div>
+</section>
+
+<section class="sec stops" id="punkty">
+  <div class="wrap">
+    <div class="rv"><div class="kick">Punkty odbioru</div><h2>Cztery przystanki</h2></div>
+    <div class="line rv" role="group" aria-label="Wybierz punkt">
+      <button class="stop" type="button" aria-pressed="true" data-i="0"><i></i><span><b>Familijna 22</b><small>zakład produkcyjny</small></span></button>
+      <button class="stop" type="button" aria-pressed="false" data-i="1"><i></i><span><b>Wróblewskiego 10A</b><small>punkt</small></span></button>
+      <button class="stop" type="button" aria-pressed="false" data-i="2"><i></i><span><b>Paderewskiego 39</b><small>punkt</small></span></button>
+      <button class="stop" type="button" aria-pressed="false" data-i="3"><i></i><span><b>Królewska / Gościnna</b><small>punkt na rogu</small></span></button>
+    </div>
+    <div class="stopmap rv">
+      <div class="stopinfo"><div class="kick" id="sKind">Zakład produkcyjny</div><h3 id="sName">ul. Familijna 22</h3><p id="sAddr">93-494 Łódź, Łódź-Górna</p><p>Płatność gotówką i kartą. Godziny otwarcia punktów są w przypiętym poście na Facebooku.</p></div>
+      <div class="mapbox"><iframe id="map" title="Mapa punktu Cukierni Rozalka" loading="lazy" src="about:blank"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec xmas" id="swieta">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Oferta świąteczna 2026</div>
+      <h2>Ciasta na święta</h2>
+      <p class="intro">Zamówienia przyjmujemy przez Messenger, telefonicznie, SMS-em i w punktach. Nie zostawiajcie tego na ostatnią chwilę.</p>
+      <ul class="dates">
+        <li><span>Odbiór 8:00–18:00 we wszystkich czterech miejscach</span><b>22.12</b></li>
+        <li><span>Odbiór 8:00–18:00 we wszystkich czterech miejscach</span><b>23.12</b></li>
+        <li><span>Wigilia, dzień wolny, bez odbioru</span><b>24.12</b></li>
+      </ul>
+    </div>
+    <div class="card rv">
+      <div class="kick">Ostatnio w cukierni</div>
+      <h3>Rogale z białym makiem</h3>
+      <div class="price"><span>duży rogal</span><b>9,90 zł</b></div>
+      <div class="price"><span>mini rogaliki</span><b>59 zł/kg</b></div>
+      <small>Ceny z wpisu z 4 listopada 2026.</small>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="kontakt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Zamówienia</div>
+      <a class="big" href="tel:+48505707413">505 707 413</a>
+      <dl style="margin-top:26px">
+        <dt>Telefon</dt><dd>6:00–18:00, także SMS</dd>
+        <dt>E-mail</dt><dd><a href="mailto:rozalska-ewa@wp.pl">rozalska-ewa@wp.pl</a></dd>
+        <dt>Zakład</dt><dd>ul. Familijna 22, 93-494 Łódź</dd>
+        <dt>Social</dt><dd><a href="https://www.facebook.com/cukiernia.rozalka" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/cukiernia_rozalka_lodz/" rel="noopener">Instagram</a></dd>
+      </dl>
+    </div>
+    <div class="rv"><div class="score">98%</div><p style="margin-top:10px;font-size:18px">gości poleca Rozalkę, 209 opinii na Facebooku.</p></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>To makieta nowej strony. Nie ma na niej zdjęć wypieków: makowiec na ekranie to model 3D wygenerowany komputerowo. W pełnej wersji pojawią się prawdziwe zdjęcia tortów i ciast, cennik i godziny otwarcia punktów, za zgodą właścicieli. Adresy, zasady zamówień, ceny rogali i dane kontaktowe pochodzą z facebookowej strony Cukiernia Rozalka.</p>
+</footer>
+
+<script>
+(function(){
+/* blacha */
+var g=document.querySelectorAll('#grid4 i'),w=document.getElementById('weight'),bs=document.querySelectorAll('.picker button');
+bs.forEach(function(b){b.addEventListener('click',function(){var q=+b.dataset.q;bs.forEach(function(x){x.setAttribute('aria-pressed',x===b)});g.forEach(function(c,i){c.classList.toggle('on',i<q)});w.textContent='około '+q+' kg'})});
+/* przystanki */
+var P=[
+ {k:'Zakład produkcyjny',n:'ul. Familijna 22',a:'93-494 Łódź, Łódź-Górna',lat:51.7209076,lon:19.4391442},
+ {k:'Punkt',n:'ul. Wróblewskiego 10A',a:'93-005 Łódź, Łódź-Górna',lat:51.7443179,lon:19.4541507},
+ {k:'Punkt',n:'ul. Paderewskiego 39',a:'93-025 Łódź, Łódź-Górna',lat:51.7272646,lon:19.4683751},
+ {k:'Punkt',n:'róg ul. Królewskiej i ul. Gościnnej',a:'Łódź, Stare Chojny',lat:51.7162,lon:19.4814}];
+var st=document.querySelectorAll('.stop'),map=document.getElementById('map');
+function pick(i){var p=P[i],d=.006;st.forEach(function(s){s.setAttribute('aria-pressed',+s.dataset.i===i)});
+ document.getElementById('sKind').textContent=p.k;document.getElementById('sName').textContent=p.n;document.getElementById('sAddr').textContent=p.a;
+ map.src='https://www.openstreetmap.org/export/embed.html?bbox='+(p.lon-d*1.6)+'%2C'+(p.lat-d)+'%2C'+(p.lon+d*1.6)+'%2C'+(p.lat+d)+'&layer=mapnik&marker='+p.lat+'%2C'+p.lon}
+st.forEach(function(s){s.addEventListener('click',function(){pick(+s.dataset.i)})});
+var mo=new IntersectionObserver(function(e){if(e[0].isIntersecting){pick(0);mo.disconnect()}},{rootMargin:'300px'});mo.observe(map);
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+<script defer>
+addEventListener('DOMContentLoaded',function(){
+var cv=document.getElementById('cv');if(!window.THREE||!THREE.GLTFLoader){cv.remove();return}
+try{var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){cv.remove();return}
+R.setPixelRatio(Math.min(devicePixelRatio||1,2));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.05;
+var S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(30,1,.1,50);cam.position.set(0,1.5,6.4);cam.lookAt(0,0,0);
+S.add(new THREE.HemisphereLight(0xfff0f4,0x6a1030,.85));
+var k=new THREE.DirectionalLight(0xfff4e8,1.7);k.position.set(-3,5,4);S.add(k);
+var r=new THREE.DirectionalLight(0xff9fb8,1.2);r.position.set(4,2,-3);S.add(r);
+var piv=new THREE.Group();S.add(piv);
+new THREE.GLTFLoader().load('makowiec.glb',function(g){var o=g.scene,b=new THREE.Box3().setFromObject(o),s=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3()),sc=2.7/Math.max(s.x,s.y,s.z);o.scale.setScalar(sc);o.position.set(-c.x*sc,-c.y*sc,-c.z*sc);piv.add(o)});
+function fit(){var w=cv.clientWidth,h=cv.clientHeight;if(!w)return;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+fit();addEventListener('resize',fit);
+var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches,t0=performance.now();
+(function loop(now){requestAnimationFrame(loop);if(!vis)return;var t=(now-t0)/1000;
+ piv.rotation.y=still?.6:t*.4;piv.position.y=still?0:Math.sin(t*1.2)*.1;piv.rotation.x=.12+Math.sin(t*.6)*.05;R.render(S,cam)})(t0);
+});
+</script>
+<script>
+(function(){var els=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})})();
+</script>
+<script data-goatcounter="https://penia-demo.goatcounter.com/count" data-goatcounter-settings='{"path":"rozalka"}' async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
