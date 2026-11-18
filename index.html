@@ -25,7 +25,8 @@
   --bd:'Figtree','Helvetica Neue',Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{background:var(--jam)}
+html{background:var(--jam);scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{font-family:var(--bd);font-size:17px;line-height:1.55;color:var(--icing);background:var(--jam);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-underline-offset:4px}
 :focus-visible{outline:3px solid var(--butter);outline-offset:3px;border-radius:6px}
