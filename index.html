@@ -82,17 +82,19 @@ h1,h2,h3{font-family:var(--hd);font-weight:400;line-height:1;letter-spacing:-.01
 .pan .kick{color:var(--jam)}
 .pan .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,90px);align-items:center}
 @media(max-width:860px){.pan .wrap{grid-template-columns:1fr}}
-.tray{position:relative;aspect-ratio:4/3;border-radius:18px;background:#3a2d3f;padding:14px;box-shadow:inset 0 0 0 4px #554659,0 26px 50px rgba(29,22,34,.25)}
-.grid4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;height:100%}
-.grid4 i{position:relative;border-radius:6px;border:2px dashed rgba(255,255,255,.28);display:grid;place-items:center;font:800 13px var(--bd);font-style:normal;color:rgba(255,255,255,.45);transition:background .45s,border-color .45s,color .45s}
-.grid4 i::after{content:"pusto"}
-.grid4 i.on{border:0;color:var(--poppy);
-  background:
-   radial-gradient(circle at 18% 22%,#fff3c9 0 5px,transparent 6px),radial-gradient(circle at 62% 30%,#e9b45c 0 6px,transparent 7px),
-   radial-gradient(circle at 38% 68%,#fff3c9 0 4px,transparent 5px),radial-gradient(circle at 80% 72%,#e9b45c 0 5px,transparent 6px),
-   radial-gradient(circle at 50% 50%,#f3c470,#d99a45 80%);
-  background-size:46px 46px,52px 52px,40px 40px,58px 58px,100% 100%;
-  box-shadow:inset 0 -6px 0 rgba(120,60,10,.25)}
+/* blacha: stalowa forma, w środku zdjęcie placka pocięte na ćwiartki */
+.tray{position:relative;aspect-ratio:4/3;border-radius:14px;padding:16px;
+  background:linear-gradient(135deg,#d9dde2 0%,#9aa1aa 22%,#e9ecef 48%,#8d949d 74%,#c9ced4 100%);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.7),inset 0 -3px 6px rgba(0,0,0,.25),0 30px 50px rgba(29,22,34,.3)}
+.grid4{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;height:100%;border-radius:6px;padding:3px;
+  background:linear-gradient(160deg,#7c838c,#5d636b 60%,#737a83);box-shadow:inset 0 3px 8px rgba(0,0,0,.45)}
+.grid4 i{position:relative;border-radius:3px;display:grid;place-items:center;font:800 13px var(--bd);font-style:normal;color:rgba(255,255,255,.75);
+  background:linear-gradient(150deg,rgba(255,255,255,.18),rgba(255,255,255,0) 40%),#666d76;box-shadow:inset 0 2px 6px rgba(0,0,0,.35);transition:filter .45s,transform .45s}
+.grid4 i::after{content:"pusto";opacity:.7}
+.grid4 i.on{color:var(--poppy);background:url(placek.jpg) no-repeat;background-size:200% 200%;box-shadow:inset 0 0 0 1px rgba(90,50,10,.35),0 2px 3px rgba(0,0,0,.35);animation:drop .45s ease}
+.grid4 i:nth-child(1).on{background-position:0 0}.grid4 i:nth-child(2).on{background-position:100% 0}
+.grid4 i:nth-child(3).on{background-position:0 100%}.grid4 i:nth-child(4).on{background-position:100% 100%}
+@keyframes drop{from{transform:scale(.94);filter:brightness(1.15)}to{transform:none;filter:none}}
 .grid4 i.on::after{content:"1/4 · ok. 1 kg";background:rgba(255,255,255,.88);padding:6px 10px;border-radius:999px}
 .traycap{margin-top:12px;text-align:center;font-size:14px;color:#5a4a5e}
 .picker{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
@@ -208,7 +210,7 @@ footer p{max-width:88ch;font-size:13px}
       <div class="weight" id="weight" aria-live="polite">około 1 kg</div>
       <p class="note">Wagę liczymy orientacyjnie: 1/4 blachy to około 1 kg.</p>
     </div>
-    <div class="rv"><div class="tray" aria-hidden="true"><div class="grid4" id="grid4"><i class="on"></i><i></i><i></i><i></i></div></div><p class="traycap">Blacha z ciastem, widok z góry. Kliknij 1/4, 1/2, 3/4 albo całą.</p></div>
+    <div class="rv"><div class="tray" aria-hidden="true"><div class="grid4" id="grid4"><i class="on"></i><i></i><i></i><i></i></div></div><p class="traycap">Blacha z plackiem, widok z góry (zdjęcie poglądowe). Kliknij 1/4, 1/2, 3/4 albo całą.</p></div>
   </div>
   <div class="wrap">
     <ol class="ways rv">
